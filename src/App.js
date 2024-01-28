@@ -1,24 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
 
+const semesterClasses = [
+  {title: "World History to Circa 1600", courseType: "HST", creditHours : 3, id: 1},
+  {title: "Introduction to CyberSecurity", courseType: "CSC", creditHours : 3, id: 2},
+  {title: "Introduction to DataBases", courseType: "CSC", creditHours : 3, id: 3},
+  {title: "Elementary Italian", courseType: "ITL", creditHours : 3, id: 4},
+  {title: "Introduction to Java Programming", courseType: "ITC", creditHours : 3, id: 5}
+]
+
+function switchStatement (courseType) {
+  switch (courseType) {
+    case 'HST':
+      return 'blue';
+    case 'CSC':
+      return 'orange';
+    case 'ITL':
+      return 'green';
+    case 'ITC':
+      return 'purple';
+    default:
+      return 'black'
+  }
+}
+
 function App() {
+  const listItems = semesterClasses.map(semesterClass =>
+      <li
+          key = {semesterClass.id}
+          style = {{
+            color : switchStatement(semesterClass.courseType)
+          }}
+      >
+        {semesterClass.title}
+      </li>
+  );
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ul>{listItems}</ul>
   );
 }
 
