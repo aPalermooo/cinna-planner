@@ -23,6 +23,14 @@ function switchStatement (courseType) {
   }
 }
 
+function SillyButton () {
+  return (
+      <>
+        <button> Silly Button </button>
+      </>
+  );
+}
+
 function App() {
   const listItems = semesterClasses.map(semesterClass =>
       <li
@@ -35,7 +43,10 @@ function App() {
       </li>
   );
   return (
-      <ul>{listItems}</ul>
+      <div>
+        <SillyButton />
+        <ul>{listItems}</ul>
+      </div>
   );
 }
 
