@@ -24,9 +24,13 @@ function switchStatement (courseType) {
 }
 
 function SillyButton () {
+    function handleCLick () {
+        alert('Tehe!');
+    }
+
   return (
       <>
-        <button> Silly Button </button>
+        <button onClick={handleCLick}> Silly Button </button>
       </>
   );
 }
