@@ -1,45 +1,13 @@
-// import {ToastContainer, toast} from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-import ana from '../resources/images/ana.png';
-import ashe from '../resources/images/ashe.png';
-// import baptiste from '../resources/images/baptiste.png';
-// import bastion from '../resources/images/bastion.png';
-// import brigitte from '../resources/images/brigitte.png';
-import dva from '../resources/images/dva.png';
-import doomfist from '../resources/images/doomfist.png';
-import echo from '../resources/images/echo.png';
-import genji from '../resources/images/genji.png';
-import hanzo from '../resources/images/hanzo.png';
-import junkerqueen from '../resources/images/junkerqueen.png';
-// import junkrat from '../resources/images/junkrat.png';
-import kiriko from '../resources/images/kiriko.png';
-// import lucio from '../resources/images/lucio.png';
-import mccree from '../resources/images/mccree.png';
-import mei from '../resources/images/mei.png';
-// import mercy from '../resources/images/mercy.png';
-import moira from '../resources/images/moira.png';
-// import orisa from '../resources/images/orisa.png';
-// import pharah from '../resources/images/pharah.png';
-import ramattra from '../resources/images/ramattra.png';
-// import reaper from '../resources/images/reaper.png';
-// import reinhardt from '../resources/images/reinhardt.png';
-// import roadhog from '../resources/images/roadhog.png';
-// import sigma from '../resources/images/sigma.png';
-import soldier from '../resources/images/soldier.png';
-import sombra from '../resources/images/sombra.png';
-// import symmetra from '../resources/images/symmetra.png';
-import torbjorn from '../resources/images/torbjorn.png';
-// import tracer from '../resources/images/tracer.png';
-// import widowmaker from '../resources/images/widowmaker.png';
-// import winston from '../resources/images/winston.png';
-// import wreckingball from '../resources/images/wreckingball.png';
-import zarya from '../resources/images/zarya.png';
-import zenyatta from '../resources/images/zenyatta.png';
+import { philipsHeroes } from '../utils/Images.js';
+import { mikeysHeroes } from '../utils/Images.js';
+import { kevinsHeroes } from '../utils/Images.js';
+import { controlMaps } from '../utils/Images.js';
 
-let philipsTanks = [doomfist, junkerqueen, ramattra, zarya]
-let philipsDps = [ana, ashe, echo, genji, hanzo, mccree, mei, soldier, sombra, torbjorn]
-let philipsSupports = [ana, kiriko, moira, zenyatta]
-let philipsHeroes = [philipsTanks, philipsDps, philipsSupports]
+// let philipsTanks = [heroes.doomfist, heroes.junkerqueen, heroes.ramattra, heroes.zarya];
+// let philipsDps = [heroes.ana, heroes.ashe, heroes.echo, heroes.genji, heroes.hanzo, heroes.mccree, heroes.mei,
+//                   heroes.soldier, heroes.sombra, heroes.torbjorn];
+// let philipsSupports = [heroes.ana, heroes.kiriko, heroes.moira, heroes.zenyatta];
+// let philipsHeroes = [philipsTanks, philipsDps, philipsSupports]
 
 const displayPhilipsHeroes = () => {
     clearHeroes()
@@ -51,7 +19,7 @@ const displayMikeysHeroes = () => {
     let heroesDiv = document.querySelector('.supports');
     let img = document.createElement('img');
     img.setAttribute("class", "hero")
-    img.src = moira; // Set the path to your image
+    img.src = mikeysHeroes.moira; // Set the path to your image
     heroesDiv.appendChild(img);
 };
 
@@ -60,7 +28,7 @@ const displayKevinsHeroes = () => {
     let heroesDiv = document.querySelector('.tanks');
     let img = document.createElement('img');
     img.setAttribute("class", "hero")
-    img.src = dva; // Set the path to your image
+    img.src = kevinsHeroes.dva; // Set the path to your image
     heroesDiv.appendChild(img);
 };
 
@@ -95,7 +63,6 @@ const setAllHeroes = (heroPool) => {
         img.src = hero; // Set the path to your image
         supportsDiv.appendChild(img);
     })
-
 }
 
 const clearHeroes = () => {
@@ -107,11 +74,31 @@ const clearHeroes = () => {
     supportDiv.innerHTML = '';
 }
 
+const displayControlMaps = () => {
+    const mapsDiv = document.querySelector('.mapSelection');
+    mapsDiv.setAttribute('style', 'display: none;');
+    const controlMapsDiv = document.querySelector('.maps');
+    controlMapsDiv.setAttribute('style', 'display: flex;');
 
+
+    controlMaps.forEach(map => {
+        const button = document.createElement('button')
+        button.setAttribute("onClick", displayMikeysHeroes)
+        button.setAttribute("class", "phantom")
+
+
+        const img = document.createElement('img');
+        img.setAttribute("class", "controlMap")
+        img.src = map; // Set the path to your image
+
+        button.appendChild(img)
+        controlMapsDiv.appendChild(button);
+    })
+}
 
 function Overwatch() {
     return (
-        <div>
+        <div class="overwatchContainer">
             <div class="heroes">
                 <div class="tanksContainer">
                     <h2>Tanks</h2>
@@ -133,11 +120,27 @@ function Overwatch() {
                     </div>
                 </div>
             </div>
-            <div class="players">
-                <button class="player" onClick={displayPhilipsHeroes}>Philip</button>
-                <button class="player" onClick={displayMikeysHeroes}>Mikey</button>
-                <button class="player" onClick={displayKevinsHeroes}>Kevin</button>
-                {/*<ToastContainer />*/}
+            <div class="buttons">
+                <div class="players">
+                    <button class="button-64" onClick={displayPhilipsHeroes}><span class="text">Philip</span></button>
+                    <button class="button-64" onClick={displayMikeysHeroes}><span className="text">Mikey</span></button>
+                    <button class="button-64" onClick={displayKevinsHeroes}><span className="text">KTaco</span></button>
+                </div>
+                <div class="mapSelection">
+                    <button class="button-78" onClick={displayControlMaps}><span class="text">Control</span></button>
+                    <button class="button-78" onClick={displayMikeysHeroes}><span className="text">Hybrid</span></button>
+                    <button class="button-78" onClick={displayKevinsHeroes}><span className="text">Push</span></button>
+                    <button class="button-78" onClick={displayKevinsHeroes}><span className="text">Escort</span></button>
+                </div>
+                <div class = "maps" style={{ display: 'none' }}>
+
+                </div>
+                <div class="counterHero">
+                    <button class="button-46" onClick={displayPhilipsHeroes}><span class="text">Sombra</span></button>
+                    <button class="button-46" onClick={displayMikeysHeroes}><span className="text">Pharah</span></button>
+                    <button class="button-46" onClick={displayKevinsHeroes}><span className="text">Orisa</span></button>
+                    <button class="button-46" onClick={displayKevinsHeroes}><span className="text">Doomfist</span></button>
+                </div>
             </div>
         </div>
     );
