@@ -62,27 +62,13 @@
     background-color: #111;
 }
 
-.heroes {
-    width: 100%;
-    height: 350px; /* Adjust height as needed */
-    background-color: #888; /* Gray color */
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    display: flex;
-    justify-content: center;
-
-    align-items: center;
-    text-align: center;
-}
-
 /*Overwatch stuff*/
 .overwatchContainer {
-    position: fixed;
-    top: 45px;
+    position: relative;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 930px;
     background: linear-gradient(to right, #000000, #26004d, #000000);
     background-size: 600% 100%;
     animation: gradient 15s ease infinite;
@@ -102,27 +88,35 @@
 
 h2 {
     background-color: darkgrey;
-    padding: 1px;
     border-radius: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1px;
+    width: 50%;
 }
 
-.tanksContainer {
-    width: 33%;
-    height: 300px; /* Adjust height as needed */
-    background-color: #888; /* Gray color */
+.heroes {
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+
+    align-items: flex-start;
+    text-align: center;
 }
 
-.dpsContainer {
-    width: 33%;
-    height: 300px; /* Adjust height as needed */
-    background-color: #888; /* Gray color */
+.heroes.expanded {
+    height: fit-content;
 }
 
-.supportsContainer {
+.tanksContainer, .dpsContainer, .supportsContainer {
     width: 33%;
-    height: 300px; /* Adjust height as needed */
-    background-color: #888; /* Gray color */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: fit-content;
 }
 
 .tanks, .dps, .supports {
@@ -130,6 +124,8 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    width: 500px;
+    padding-bottom: 20px;
 }
 
 .hero {
@@ -147,6 +143,21 @@ h2 {
 .buttons {
     display: flex;
     justify-content: space-evenly;
+    height: fit-content;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.buttonsTest {
+    border: 1px solid white;
+}
+
+.resetDiv {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .phantom {
@@ -154,21 +165,21 @@ h2 {
 }
 
 .players, .mapSelection, .counterHero {
-    height: 250px;
+    /*height: 250px;*/
+    height: fit-content;
     width: 200px;
     display: flex;
     flex-direction: column;
 }
 
 .maps {
-    height: 260px;
-    width: 719px;
+    height: fit-content;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    align-content: flex-end;
-    justify-content: flex-start;
+    align-content: center;
+    justify-content: center;
     align-items: center;
+    flex-direction: row;
 }
 
 /* CSS */
@@ -187,7 +198,7 @@ h2 {
     line-height: 1em;
     max-width: 100%;
     min-width: 140px;
-    padding: 16px 24px;
+    padding: 5px 24px;
     text-decoration: none;
     user-select: none;
     -webkit-user-select: none;
@@ -372,4 +383,93 @@ h2 {
         min-width: 200px;
         padding: 14px 16px;
     }
+}
+
+.button-82-pushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-82-shadow {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-82-edge {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    background: linear-gradient(
+            to left,
+            hsl(340deg 100% 16%) 0%,
+            hsl(340deg 100% 32%) 8%,
+            hsl(340deg 100% 32%) 92%,
+            hsl(340deg 100% 16%) 100%
+    );
+}
+
+.button-82-front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(345deg 100% 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+    .button-82-front {
+        font-size: 1.25rem;
+        padding: 12px 42px;
+    }
+}
+
+.button-82-pushable:hover {
+    filter: brightness(110%);
+    -webkit-filter: brightness(110%);
+}
+
+.button-82-pushable:hover .button-82-front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.button-82-pushable:hover .button-82-shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.button-82-pushable:focus:not(:focus-visible) {
+    outline: none;
 }

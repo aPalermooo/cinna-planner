@@ -44,48 +44,8 @@ import nepal from '../resources/images/maps/nepal.png';
 import oasis from '../resources/images/maps/oasis.png';
 import samoa from '../resources/images/maps/samoa.png';
 
-export const heroes = {
-    zarya,
-    ana,
-    ashe,
-    baptiste,
-    bastion,
-    brigitte,
-    dva,
-    doomfist,
-    echo,
-    genji,
-    hanzo,
-    illari,
-    junkerqueen,
-    junkrat,
-    kiriko,
-    lucio,
-    maui,
-    mccree,
-    mei,
-    mercy,
-    moira,
-    orisa,
-    pharah,
-    ramattra,
-    reaper,
-    reinhardt,
-    roadhog,
-    sigma,
-    soldier,
-    sombra,
-    symmetra,
-    torbjorn,
-    tracer,
-    widowmaker,
-    winston,
-    wreckingball,
-    zenyatta
-};
-
 let philipsTanks = [doomfist, junkerqueen, ramattra, zarya];
-let philipsDps = [ana, ashe, echo, genji, hanzo, mccree, mei, soldier, sombra, torbjorn];
+let philipsDps = [ ashe, echo, genji, hanzo, mccree, mei, soldier, sombra, torbjorn];
 let philipsSupports = [ana, kiriko, moira, zenyatta];
 
 export const philipsHeroes = [philipsTanks, philipsDps, philipsSupports]
