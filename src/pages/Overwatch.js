@@ -12,7 +12,7 @@ const displayMikeysHeroes = () => {
     clearHeroes()
     let heroesDiv = document.querySelector('.supports');
     let img = document.createElement('img');
-    img.setAttribute("class", "hero")
+    img.setAttribute("className", "hero")
     img.src = mikeysHeroes.moira; // Set the path to your image
     heroesDiv.appendChild(img);
 };
@@ -21,7 +21,7 @@ const displayKevinsHeroes = () => {
     clearHeroes()
     let heroesDiv = document.querySelector('.tanks');
     let img = document.createElement('img');
-    img.setAttribute("class", "hero")
+    img.setAttribute("className", "hero")
     img.src = kevinsHeroes.dva; // Set the path to your image
     heroesDiv.appendChild(img);
 };
@@ -39,21 +39,21 @@ const setAllHeroes = (heroPool) => {
 
     tanks.forEach(hero => {
         const img = document.createElement('img');
-        img.setAttribute("class", "hero")
+        img.setAttribute("className", "hero")
         img.src = hero;
         tanksDiv.appendChild(img);
     })
 
     dps.forEach(hero => {
         const img = document.createElement('img');
-        img.setAttribute("class", "hero")
+        img.setAttribute("className", "hero")
         img.src = hero;
         dpsDiv.appendChild(img);
     })
 
     supports.forEach(hero => {
         const img = document.createElement('img');
-        img.setAttribute("class", "hero")
+        img.setAttribute("className", "hero")
         img.src = hero;
         supportsDiv.appendChild(img);
     })
@@ -82,10 +82,10 @@ const displayControlMaps = () => {
     controlMaps.forEach(map => {
         const button = document.createElement('button')
         button.addEventListener("click", displayMikeysHeroes);
-        button.setAttribute("class", "phantom")
+        button.setAttribute("className", "phantom")
 
         const img = document.createElement('img');
-        img.setAttribute("class", "controlMap")
+        img.setAttribute("className", "controlMap")
         img.src = map; // Set the path to your image
 
         button.appendChild(img)
@@ -95,78 +95,78 @@ const displayControlMaps = () => {
 
 function Overwatch() {
     return (
-        <div class="overwatchContainer">
-            <div class="heroes">
-                <div class="tanksContainer">
+        <div className="overwatchContainer">
+            <div className="heroes">
+                <div className="tanksContainer">
                     <h2>Tanks</h2>
                     <div className="tanks">
 
                     </div>
                 </div>
-                <div class="dpsContainer">
+                <div className="dpsContainer">
                     <h2>DPS</h2>
-                    <div class="dps">
+                    <div className="dps">
 
                     </div>
 
                 </div>
-                <div class="supportsContainer">
+                <div className="supportsContainer">
                     <h2>Supports</h2>
                     <div className="supports">
 
                     </div>
                 </div>
             </div>
-            <div class="buttonsTest">
-                <div class="buttons">
-                    <div class="players">
-                        <button class="button-64" onClick={displayPhilipsHeroes}>
-                            <span class="text">Philip</span>
+            <div className="buttonsTest">
+                <div className="buttons">
+                    <div className="players">
+                        <button className="button-64" onClick={displayPhilipsHeroes}>
+                            <span className="text">Philip</span>
                         </button>
-                        <button class="button-64" onClick={displayMikeysHeroes}>
+                        <button className="button-64" onClick={displayMikeysHeroes}>
                             <span className="text">Mikey</span>
                         </button>
-                        <button class="button-64" onClick={displayKevinsHeroes}>
+                        <button className="button-64" onClick={displayKevinsHeroes}>
                             <span className="text">KTaco</span>
                         </button>
                     </div>
-                    <div class="mapSelection">
-                        <button class="button-78" onClick={displayControlMaps}>
-                            <span class="text">Control</span>
+                    <div className="mapSelection">
+                        <button className="button-78" onClick={displayControlMaps}>
+                            <span className="text">Control</span>
                         </button>
-                        <button class="button-78" onClick={displayMikeysHeroes}>
+                        <button className="button-78" onClick={displayMikeysHeroes}>
                             <span className="text">Hybrid</span>
                         </button>
-                        <button class="button-78" onClick={displayKevinsHeroes}>
+                        <button className="button-78" onClick={displayKevinsHeroes}>
                             <span className="text">Push</span>
                         </button>
-                        <button class="button-78" onClick={displayKevinsHeroes}>
+                        <button className="button-78" onClick={displayKevinsHeroes}>
                             <span className="text">Escort</span>
                         </button>
                     </div>
-                    <div class="maps" style={{display: 'none'}}>
+                    <div className="maps" style={{display: 'none'}}>
 
                     </div>
-                    <div class="counterHero">
-                        <button class="button-46" onClick={displayPhilipsHeroes}>
-                            <span class="text">Sombra</span>
+                    <div className="counterHero">
+                        <button className="button-46" onClick={displayPhilipsHeroes}>
+                            <span className="text">Sombra</span>
                         </button>
-                        <button class="button-46" onClick={displayMikeysHeroes}>
+                        <button className="button-46" onClick={displayMikeysHeroes}>
                             <span className="text">Pharah</span>
                         </button>
-                        <button class="button-46" onClick={displayKevinsHeroes}>
+                        <button className="button-46" onClick={displayKevinsHeroes}>
                             <span className="text">Orisa</span>
                         </button>
-                        <button class="button-46" onClick={displayKevinsHeroes}>
+                        <button className="button-46" onClick={displayKevinsHeroes}>
                             <span className="text">Doomfist</span>
                         </button>
                     </div>
                 </div>
-                <div class="resetDiv">
-                    <button class="button-82-pushable" role="button" onClick={() => window.location.reload()}>
-                        <span class="button-82-shadow"></span>
-                        <span class="button-82-edge"></span>
-                        <span class="button-82-front text">
+                <div className="resetDiv">
+                    <button className="button-82-pushable" role="button" onClick={() => window.location.reload()}>
+                        <span className="button-82-shadow"></span>
+                        <span className="button-82-edge"></span>
+                        <span className="button-82-front text">
                                    Reset
                         </span>
                     </button>
