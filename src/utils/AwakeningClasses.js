@@ -1,47 +1,182 @@
 export let ClassMap = {
-    "Lord / Great Lord": ["Lord / Great Lord", 40, 20, 0, 20, 20, 0, 10, 5],
-    "SaintLord": ["Saint Lord", 40, 15, 15, 20, 20, 0, 10, 10],
-    "Tactician / Grandmaster": ["Tactician / Grandmaster", 40, 15, 15, 15, 15, 0, 10, 10],
-    "Mastermind": ["Mastermind", 40, 15, 15, 15, 15, 0, 10, 10],
-    "Cavalier": ["Cavalier", 45, 20, 0, 20, 20, 0, 10, 5],
-    "Paladin": ["Paladin", 45, 20, 0, 20, 20, 0, 10, 10],
-    "Great Knight": ["Great Knight", 50, 25, 0, 15, 15, 0, 15, 5],
-    "Knight": ["Knight", 50, 25, 0, 15, 10, 0, 15, 5],
-    "General": ["General", 50, 25, 0, 15, 10, 0, 15, 10],
-    "Myrmidon": ["Myrmidon", 40, 20, 0, 25, 25, 0, 5, 5],
-    "Swordmaster": ["Swordmaster", 40, 20, 0, 25, 25, 0, 5, 10],
-    "Mercenary / Hero": ["Mercenary / Hero", 45, 20, 0, 25, 20, 0, 10, 5],
-    "Fighter / Warrior": ["Fighter / Warrior", 45, 25, 0, 20, 15, 0, 10, 5],
-    "Barbarian / Berserker": ["Barbarian / Berserker", 50, 25, 0, 15, 20, 0, 5, 5],
-    "Archer": ["Archer", 45, 15, 0, 30, 15, 0, 10, 5],
-    "Sniper": ["Sniper", 45, 15, 0, 30, 15, 0, 15, 5],
-    "Bow Knight": ["Bow Knight", 50, 20, 0, 25, 20, 0, 5, 5],
-    "Thief": ["Thief", 35, 15, 5, 25, 25, 0, 5, 5],
-    "Assassin": ["Assassin", 40, 20, 0, 30, 25, 0, 5, 5],
-    "Trickster": ["Trickster", 35, 10, 25, 25, 20, 0, 5, 10],
-    "Pegasus Knight": ["Pegasus Knight", 40, 15, 5, 25, 25, 0, 5, 10],
-    "Falcon Knight": ["Falcon Knight", 40, 15, 10, 25, 25, 0, 5, 10],
-    "Dark Flier": ["Dark Flier", 40, 10, 15, 20, 20, 5, 0, 10],
-    "Wyvern Rider / Lord": ["Wyvern Rider / Lord", 45, 30, 0, 15, 15, 0, 10, 5],
-    "Griffon Rider": ["Griffon Rider", 45, 25, 0, 20, 20, 0, 5, 5],
-    "Mage / Sage": ["Mage / Sage", 35, 0, 20, 20, 20, 0, 5, 10],
-    "Dark Mage": ["Dark Mage", 50, 5, 15, 15, 15, 0, 10, 10],
-    "Sorcerer": ["Sorcerer", 45, 0, 20, 15, 15, 0, 10, 10],
-    "Mage Knight": ["Mage Knight", 50, 15, 15, 20, 20, 0, 10, 5],
-    "Dark Knight": ["Dark Knight", 50, 5, 15, 20, 20, 0, 10, 5],
-    "Priest / Cleric": ["Priest / Cleric", 35, 5, 15, 15, 15, 0, 5, 15],
-    "War Monk / Cleric": ["War Monk / Cleric", 45, 15, 15, 10, 15, 0, 10, 10],
-    "Troubadour / Valkyrie": ["Troubadour / Valkyrie", 35, 0, 20, 10, 20, 0, 5, 15],
-    "Villager": ["Villager", 35, 10, 0, 5, 5, 0, 10, 5],
-    "Soldier": ["Soldier", 40, 20, 0, 20, 20, 0, 10, 10],
-    "Dancer": ["Dancer", 35, 5, 0, 25, 25, 0, 5, 5],
-    "Prima": ["Prima", 35, 10, 0, 25, 25, 0, 10, 10],
-    "Taguel M": ["Taguel M", 45, 20, 0, 15, 15, 0, 15, 5],
-    "Taguel F": ["Taguel F", 40, 15, 0, 20, 20, 0, 10, 5],
-    "Laguz": ["Laguz", 45, 20, 10, 20, 20, 0, 15, 5],
-    "Manakete": ["Manakete", 50, 20, 15, 20, 20, 0, 15, 15],
-    "Lodestar": ["Lodestar", 40, 20, 0, 20, 20, 0, 10, 5],
-    "Conqueror": ["Conqueror", 50, 20, 5, 15, 15, 0, 10, 10],
-    "Dread Fighter": ["Dread Fighter", 40, 20, 10, 20, 20, 0, 10, 10],
-    "Bride": ["Bride", 40, 20, 10, 20, 20, 0, 10, 10]
+    "Lord / Great Lord": {
+        "Name": "Lord / Great Lord",
+        "GrowthRates": [40, 20, 0, 20, 20, 0, 10, 5]
+    },
+    "Saint Lord": {
+        "Name": "Saint Lord",
+        "GrowthRates": [40, 15, 15, 20, 20, 0, 10, 10]
+    },
+    "Tactician / Grandmaster": {
+        "Name": "Tactician / Grandmaster",
+        "GrowthRates": [40, 15, 15, 15, 15, 0, 10, 10]
+    },
+    "Mastermind": {
+        "Name": "Mastermind",
+        "GrowthRates": [40, 15, 15, 15, 15, 0, 10, 10]
+    },
+    "Cavalier": {
+        "Name": "Cavalier",
+        "GrowthRates": [45, 20, 0, 20, 20, 0, 10, 5]
+    },
+    "Paladin": {
+        "Name": "Paladin",
+        "GrowthRates": [45, 20, 0, 20, 20, 0, 10, 10]
+    },
+    "Great Knight": {
+        "Name": "Great Knight",
+        "GrowthRates": [50, 25, 0, 15, 15, 0, 15, 5]
+    },
+    "Knight": {
+        "Name": "Knight",
+        "GrowthRates": [50, 25, 0, 15, 10, 0, 15, 5]
+    },
+    "General": {
+        "Name": "General",
+        "GrowthRates": [50, 25, 0, 15, 10, 0, 15, 10]
+    },
+    "Myrmidon": {
+        "Name": "Myrmidon",
+        "GrowthRates": [40, 20, 0, 25, 25, 0, 5, 5]
+    },
+    "Swordmaster": {
+        "Name": "Swordmaster",
+        "GrowthRates": [40, 20, 0, 25, 25, 0, 5, 10]
+    },
+    "Mercenary / Hero": {
+        "Name": "Mercenary / Hero",
+        "GrowthRates": [45, 20, 0, 25, 20, 0, 10, 5]
+    },
+    "Fighter / Warrior": {
+        "Name": "Fighter / Warrior",
+        "GrowthRates": [45, 25, 0, 20, 15, 0, 10, 5]
+    },
+    "Barbarian / Berserker": {
+        "Name": "Barbarian / Berserker",
+        "GrowthRates": [50, 25, 0, 15, 20, 0, 5, 5]
+    },
+    "Archer": {
+        "Name": "Archer",
+        "GrowthRates": [45, 15, 0, 30, 15, 0, 10, 5]
+    },
+    "Sniper": {
+        "Name": "Sniper",
+        "GrowthRates": [45, 15, 0, 30, 15, 0, 15, 5]
+    },
+    "Bow Knight": {
+        "Name": "Bow Knight",
+        "GrowthRates": [50, 20, 0, 25, 20, 0, 5, 5]
+    },
+    "Thief": {
+        "Name": "Thief",
+        "GrowthRates": [35, 15, 5, 25, 25, 0, 5, 5]
+    },
+    "Assassin": {
+        "Name": "Assassin",
+        "GrowthRates": [40, 20, 0, 30, 25, 0, 5, 5]
+    },
+    "Trickster": {
+        "Name": "Trickster",
+        "GrowthRates": [35, 10, 25, 25, 20, 0, 5, 10]
+    },
+    "Pegasus Knight": {
+        "Name": "Pegasus Knight",
+        "GrowthRates": [40, 15, 5, 25, 25, 0, 5, 10]
+    },
+    "Falcon Knight": {
+        "Name": "Falcon Knight",
+        "GrowthRates": [40, 15, 10, 25, 25, 0, 5, 10]
+    },
+    "Dark Flier": {
+        "Name": "Dark Flier",
+        "GrowthRates": [40, 10, 15, 20, 20, 5, 0, 10]
+    },
+    "Wyvern Rider / Lord": {
+        "Name": "Wyvern Rider / Lord",
+        "GrowthRates": [45, 30, 0, 15, 15, 0, 10, 5]
+    },
+    "Griffon Rider": {
+        "Name": "Griffon Rider",
+        "GrowthRates": [45, 25, 0, 20, 20, 0, 5, 5]
+    },
+    "Mage / Sage": {
+        "Name": "Mage / Sage",
+        "GrowthRates": [35, 0, 20, 20, 20, 0, 5, 10]
+    },
+    "Dark Mage": {
+        "Name": "Dark Mage",
+        "GrowthRates": [50, 5, 15, 15, 15, 0, 10, 10]
+    },
+    "Sorcerer": {
+        "Name": "Sorcerer",
+        "GrowthRates": [45, 0, 20, 15, 15, 0, 10, 10]
+    },
+    "Mage Knight": {
+        "Name": "Mage Knight",
+        "GrowthRates": [50, 15, 15, 20, 20, 0, 10, 5]
+    },
+    "Dark Knight": {
+        "Name": "Dark Knight",
+        "GrowthRates": [50, 5, 15, 20, 20, 0, 10, 5]
+    },
+    "Priest / Cleric": {
+        "Name": "Priest / Cleric",
+        "GrowthRates": [35, 5, 15, 15, 15, 0, 5, 15]
+    },
+    "War Monk / Cleric": {
+        "Name": "War Monk / Cleric",
+        "GrowthRates": [45, 15, 15, 10, 15, 0, 10, 10]
+    },
+    "Troubadour / Valkyrie": {
+        "Name": "Troubadour / Valkyrie",
+        "GrowthRates": [35, 0, 20, 10, 20, 0, 5, 15]
+    },
+    "Villager": {
+        "Name": "Villager",
+        "GrowthRates": [35, 10, 0, 5, 5, 0, 10, 5]
+    },
+    "Soldier": {
+        "Name": "Soldier",
+        "GrowthRates": [40, 20, 0, 20, 20, 0, 10, 10]
+    },
+    "Dancer": {
+        "Name": "Dancer",
+        "GrowthRates": [35, 5, 0, 25, 25, 0, 5, 5]
+    },
+    "Prima": {
+        "Name": "Prima",
+        "GrowthRates": [35, 10, 0, 25, 25, 0, 10, 10]
+    },
+    "Taguel": {
+        "Name": "Taguel",
+        "GrowthRates": [45, 20, 0, 15, 15, 0, 15, 5]
+    },
+    "Laguz": {
+        "Name": "Laguz",
+        "GrowthRates": [45, 20, 10, 20, 20, 0, 15, 5]
+    },
+    "Manakete": {
+        "Name": "Manakete",
+        "GrowthRates": [50, 20, 5, 20, 20, 0, 15, 15]
+    },
+    "Mamkute": {
+        "Name": "Mamkute",
+        "GrowthRates": [50, 20, 15, 20, 20, 0, 15, 15]
+    },
+    "Lodestar": {
+        "Name": "Lodestar",
+        "GrowthRates": [40, 20, 0, 20, 20, 0, 10, 5]
+    },
+    "Conqueror": {
+        "Name": "Conqueror",
+        "GrowthRates": [50, 20, 5, 15, 15, 0, 10, 10]
+    },
+    "Dread Fighter": {
+        "Name": "Dread Fighter",
+        "GrowthRates": [40, 20, 10, 20, 20, 0, 10, 10]
+    },
+    "Bride": {
+        "Name": "Bride",
+        "GrowthRates": [40, 20, 10, 20, 20, 0, 10, 10]
+    }
 }
