@@ -5,28 +5,42 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-@Document
+@Document (collection = "events")
 public class GenericEvent {
 
     @Id
-    final private UUID id;
+    private UUID id;
     private String name;
     private String description;
-    final private Set<String> tags;
+    private Set<String> tags;
     private LocalDate dateStart;
     private LocalDate dateEnd;
 
-    public GenericEvent(String name, String description, Set<String> tags, LocalDate dateStart, LocalDate dateEnd) {
-        this.id = UUID.randomUUID();
+    // Persistence constructor for Spring Data
+    public GenericEvent() {
+        // Needed by Spring Data
+    }
+
+    public GenericEvent(UUID id, String name, String description, Set<String> tags, LocalDate dateStart, LocalDate dateEnd) {
+        this.id = id != null ? id : UUID.randomUUID();
         this.name = name;
         this.description = description;
-        this.tags = tags;
+        this.tags = tags != null ? tags : new HashSet<>();
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
     }
+
+    // Your regular constructor
+    public GenericEvent(String name, String description, Set<String> tags, LocalDate dateStart, LocalDate dateEnd) {
+        this(null, name, description, tags, dateStart, dateEnd);
+    }
+
+    public void setId(UUID Id) { this.id = Id; }
 
     public UUID getId() {
         return id;

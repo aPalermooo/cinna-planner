@@ -3,6 +3,8 @@ package com.cinnamon.cabinet.mapper.event;
 import com.cinnamon.cabinet.domain.event.GenericEvent;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface GenericEventRepository extends MongoRepository<GenericEvent, String> {
+import java.util.UUID;
+
+public interface GenericEventRepository extends MongoRepository<GenericEvent, UUID> {
 
 }
