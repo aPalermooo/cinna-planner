@@ -1,12 +1,17 @@
 package com.cinnamon.cabinet.domain.event;
 
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDate;
 import java.util.Set;
 import java.util.UUID;
 
+@Document
 public class GenericEvent {
 
+    @Id
     final private UUID id;
     private String name;
     private String description;
