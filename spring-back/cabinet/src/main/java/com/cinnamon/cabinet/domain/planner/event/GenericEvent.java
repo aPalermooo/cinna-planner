@@ -1,4 +1,4 @@
-package com.cinnamon.cabinet.domain.event;
+package com.cinnamon.cabinet.domain.planner.event;
 
 
 import org.springframework.data.annotation.Id;
@@ -6,7 +6,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -21,11 +20,13 @@ public class GenericEvent {
     private LocalDate dateStart;
     private LocalDate dateEnd;
 
-    // Persistence constructor for Spring Data
+    // Persistence constructor
     public GenericEvent() {
-        // Needed by Spring Data
+        this.id = UUID.randomUUID(); // auto-generate UUID if none provided
+        this.tags = new HashSet<>(); // init tagSet
     }
 
+    // All constructor
     public GenericEvent(UUID id, String name, String description, Set<String> tags, LocalDate dateStart, LocalDate dateEnd) {
         this.id = id != null ? id : UUID.randomUUID();
         this.name = name;
@@ -35,7 +36,7 @@ public class GenericEvent {
         this.dateEnd = dateEnd;
     }
 
-    // Your regular constructor
+    // Typical constructor
     public GenericEvent(String name, String description, Set<String> tags, LocalDate dateStart, LocalDate dateEnd) {
         this(null, name, description, tags, dateStart, dateEnd);
     }

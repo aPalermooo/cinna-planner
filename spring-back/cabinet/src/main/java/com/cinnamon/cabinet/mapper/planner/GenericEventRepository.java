@@ -1,6 +1,6 @@
-package com.cinnamon.cabinet.mapper.event;
+package com.cinnamon.cabinet.mapper.planner;
 
-import com.cinnamon.cabinet.domain.event.GenericEvent;
+import com.cinnamon.cabinet.domain.planner.event.GenericEvent;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.UUID;

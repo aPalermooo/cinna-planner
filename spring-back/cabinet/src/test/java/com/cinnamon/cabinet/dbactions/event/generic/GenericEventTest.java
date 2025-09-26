@@ -1,7 +1,7 @@
 package com.cinnamon.cabinet.dbactions.event.generic;
 
-import com.cinnamon.cabinet.domain.event.GenericEvent;
-import com.cinnamon.cabinet.mapper.event.GenericEventRepository;
+import com.cinnamon.cabinet.domain.planner.event.GenericEvent;
+import com.cinnamon.cabinet.mapper.planner.GenericEventRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

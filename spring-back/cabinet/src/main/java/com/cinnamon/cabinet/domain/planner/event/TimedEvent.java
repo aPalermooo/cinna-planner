@@ -1,8 +1,7 @@
-package com.cinnamon.cabinet.domain.event;
+package com.cinnamon.cabinet.domain.planner.event;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
