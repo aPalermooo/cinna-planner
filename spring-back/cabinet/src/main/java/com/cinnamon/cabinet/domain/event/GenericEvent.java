@@ -40,7 +40,9 @@ public class GenericEvent {
         this(null, name, description, tags, dateStart, dateEnd);
     }
 
-    public void setId(UUID Id) { this.id = Id; }
+    public void setId(UUID Id) {
+        this.id = (Id != null ? Id : UUID.randomUUID());
+    }
 
     public UUID getId() {
         return id;
@@ -80,6 +82,10 @@ public class GenericEvent {
 
     public void setDateEnd(LocalDate dateEnd) {
         this.dateEnd = dateEnd;
+    }
+
+    public void setTags(Set<String> tags) {
+        this.tags = tags;
     }
 
     public void appendTags(Set<String> tags) {
