@@ -1,4 +1,4 @@
-package com.cinnamon.cabinet.config;
+package com.cinnamon.cabinet.database;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-class MongoConnectionTest {
+class ConnectionTest {
 
     @Autowired
     private MongoTemplate mongoTemplate;
@@ -17,7 +17,7 @@ class MongoConnectionTest {
     void testMongoConnection() {
         assertThat(mongoTemplate).isNotNull();
         String dbName = mongoTemplate.getDb().getName();
-        System.out.println("✅ Connected to MongoDB database: " + dbName);
+        System.out.println("Connected to MongoDB database: " + dbName);
         assertThat(dbName).isNotBlank();
     }
 }
