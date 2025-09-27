@@ -1,9 +1,7 @@
 package com.cinnamon.cabinet.domain.planner;
 
-import com.cinnamon.cabinet.domain.util.Address;
 import org.springframework.data.annotation.Id;
 
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;

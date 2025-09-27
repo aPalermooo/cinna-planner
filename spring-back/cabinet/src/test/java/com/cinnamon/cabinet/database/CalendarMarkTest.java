@@ -1,4 +1,4 @@
-package com.cinnamon.cabinet.dbactions.event.generic;
+package com.cinnamon.cabinet.database;
 
 import com.cinnamon.cabinet.domain.planner.CalendarMark;
 import com.cinnamon.cabinet.mapper.planner.GenericEventRepository;
@@ -12,7 +12,7 @@ import java.util.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-public class calendarMarkTest {
+public class CalendarMarkTest {
 
     @Autowired
     private GenericEventRepository eventRepo;
@@ -21,9 +21,9 @@ public class calendarMarkTest {
     public void createAndRead() {
         List<CalendarMark> events =  new ArrayList<>();
 
-        events.add(new CalendarMark("Test","This is a Test", Set.of("Apple","Banana"),LocalDate.now(), LocalDate.now().plusDays(1)));
-        events.add(new CalendarMark("Event","This is another Test", Set.of("Banana"),LocalDate.now().minusDays(1), LocalDate.now()));
-        events.add(new CalendarMark("Test Day", "This is also another Test", Set.of("Apple","Pear"), LocalDate.now().plusWeeks(1), LocalDate.now().plusWeeks(1) ));
+        events.add(new CalendarMark("Test","This is a Test", Set.of("Apple","Banana")));
+        events.add(new CalendarMark("Event","This is another Test", Set.of("Banana")));
+        events.add(new CalendarMark("Test Day", "This is also another Test", Set.of("Apple","Pear")));
 
         // save and capture persisted events (with IDs)
         List<CalendarMark> savedEvents = eventRepo.saveAll(events);
@@ -55,7 +55,7 @@ public class calendarMarkTest {
     @Test
     public void update() {
         //Create Test Event
-        CalendarMark event =  new CalendarMark("Pre-Update","This is a Test", Set.of("Apple","Banana"),LocalDate.now(), LocalDate.now().plusDays(1));
+        CalendarMark event =  new CalendarMark("Pre-Update","This is a Test", Set.of("Apple","Banana"));
 
         eventRepo.save(event);
 
@@ -81,7 +81,7 @@ public class calendarMarkTest {
 
     @Test
     public void delete() {
-        CalendarMark event =  new CalendarMark("Temporary","This is a Test", Set.of("Apple","Banana"),LocalDate.now(), LocalDate.now().plusDays(1));
+        CalendarMark event =  new CalendarMark("Temporary","This is a Test", Set.of("Apple","Banana"));
 
         eventRepo.save(event);
 
