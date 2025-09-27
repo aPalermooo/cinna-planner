@@ -1,7 +1,7 @@
 package com.cinnamon.cabinet.controller.planner;
 
 
-import com.cinnamon.cabinet.domain.planner.event.GenericEvent;
+import com.cinnamon.cabinet.domain.planner.CalendarMark;
 import com.cinnamon.cabinet.mapper.planner.GenericEventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,16 +24,16 @@ public class EventController {
     }
 
     @GetMapping("/all")
-    public List<GenericEvent> all() {
+    public List<CalendarMark> all() {
         return eventRepo.findAll();
     }
-
-    @PostMapping("/create")
-    public ResponseEntity<GenericEvent> create(@RequestBody GenericEvent event) {
-        return ResponseEntity
-                .created(URI.create("/planner/" + event.getId()))
-                .body(eventRepo.save(event));
-    }
+// TODO: REVIEW
+//    @PostMapping("/create")
+//    public ResponseEntity<CalendarMark> create(@RequestBody CalendarMark event) {
+//        return ResponseEntity
+//                .created(URI.create("/planner/" + event.getId()))
+//                .body(eventRepo.save(event));
+//    }
 
     @DeleteMapping("/delete")
     public ResponseEntity<Void> delete(@RequestBody List<UUID> id) {
