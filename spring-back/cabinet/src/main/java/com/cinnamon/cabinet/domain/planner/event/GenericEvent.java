@@ -1,6 +1,7 @@
 package com.cinnamon.cabinet.domain.planner.event;
 
 
+import com.cinnamon.cabinet.domain.util.Address;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -14,11 +15,12 @@ public class GenericEvent {
 
     @Id
     private UUID id;
-    private String name;
+    private String title;
     private String description;
     private Set<String> tags;
     private LocalDate dateStart;
     private LocalDate dateEnd;
+    private Address location;
 
     // Persistence constructor
     public GenericEvent() {
@@ -27,18 +29,19 @@ public class GenericEvent {
     }
 
     // All constructor
-    public GenericEvent(UUID id, String name, String description, Set<String> tags, LocalDate dateStart, LocalDate dateEnd) {
+    public GenericEvent(UUID id, String title, String description, Set<String> tags, LocalDate dateStart, LocalDate dateEnd, Address location) {
         this.id = id != null ? id : UUID.randomUUID();
-        this.name = name;
+        this.title = title;
         this.description = description;
         this.tags = tags != null ? tags : new HashSet<>();
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
+        this.location = location;
     }
 
     // Typical constructor
-    public GenericEvent(String name, String description, Set<String> tags, LocalDate dateStart, LocalDate dateEnd) {
-        this(null, name, description, tags, dateStart, dateEnd);
+    public GenericEvent(String title, String description, Set<String> tags, LocalDate dateStart, LocalDate dateEnd, Address location) {
+        this(null, title, description, tags, dateStart, dateEnd, location);
     }
 
     public void setId(UUID Id) {
@@ -49,12 +52,12 @@ public class GenericEvent {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
@@ -97,5 +100,13 @@ public class GenericEvent {
         for (String tag : tags) {
             this.tags.remove(tag);
         }
+    }
+
+    public Address getLocation() {
+        return location;
+    }
+
+    public void setLocation(Address location) {
+        this.location = location;
     }
 }

@@ -31,7 +31,7 @@ public class GenericEventTest {
         // Check by ID
         Optional<GenericEvent> returnEvent = eventRepo.findById(savedEvents.get(1).getId());
         assertThat(returnEvent.isEmpty()).isFalse();
-        assertThat(returnEvent.get().getName()).isEqualTo("Event");
+        assertThat(returnEvent.get().getTitle()).isEqualTo("Event");
 
         // Check by ID all
         List<UUID> ids = new ArrayList<>();
@@ -42,7 +42,7 @@ public class GenericEventTest {
         List<GenericEvent> returnEvents = eventRepo.findAllById(ids);
         assertThat(returnEvents.size()).isEqualTo(events.size());
         assertThat(returnEvents)
-                .extracting(GenericEvent::getName)
+                .extracting(GenericEvent::getTitle)
                 .containsExactlyInAnyOrder("Test", "Event", "Test Day");
 
         //Clean Database
@@ -62,16 +62,16 @@ public class GenericEventTest {
         //Check Test Event
         Optional<GenericEvent> returnEvent =  eventRepo.findById(event.getId());
         assertThat(returnEvent.isEmpty()).isFalse();
-        assertThat(returnEvent.get().getName()).isEqualTo("Pre-Update");
+        assertThat(returnEvent.get().getTitle()).isEqualTo("Pre-Update");
 
         //Update Test Event
         GenericEvent updatedEvent = returnEvent.get();
-        updatedEvent.setName("Updated Test");
+        updatedEvent.setTitle("Updated Test");
         eventRepo.save(updatedEvent);
 
         returnEvent =  eventRepo.findById(updatedEvent.getId());
         assertThat(returnEvent.isEmpty()).isFalse();
-        assertThat(returnEvent.get().getName()).isEqualTo("Updated Test");
+        assertThat(returnEvent.get().getTitle()).isEqualTo("Updated Test");
 
         //Clean Database
         eventRepo.deleteById(event.getId());
@@ -87,7 +87,7 @@ public class GenericEventTest {
 
         Optional<GenericEvent> returnEvent =  eventRepo.findById(event.getId());
         assertThat(returnEvent.isEmpty()).isFalse();
-        assertThat(returnEvent.get().getName()).isEqualTo("Temporary");
+        assertThat(returnEvent.get().getTitle()).isEqualTo("Temporary");
 
         eventRepo.delete(event);
         returnEvent =  eventRepo.findById(event.getId());
