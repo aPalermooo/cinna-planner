@@ -1,12 +1,32 @@
 package com.cinnamon.cabinet.domain.planner.task;
 
-import java.util.UUID;
+import com.cinnamon.cabinet.domain.planner.CalendarMark;
 
-public class GenericTask {
+import java.time.LocalDate;
 
-    private UUID id;
-    private String name;
+public class GenericTask extends CalendarMark {
 
+    private LocalDate dueDate;
 
+    public GenericTask() {
+    }
 
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    @Override
+    public String toString() {
+        return "GenericTask{" +
+                "dueDate=" + dueDate +
+                ", id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", tags=" + tags +
+                '}';
+    }
 }
