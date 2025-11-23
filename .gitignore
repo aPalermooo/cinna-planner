@@ -1,4 +1,5 @@
 /react-front/cabinet/.gitignore
 /spring-back/cabinet/.gitignore
+/django-back/.gitignore
 
 .DS_Store
