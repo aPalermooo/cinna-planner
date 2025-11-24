@@ -13,10 +13,12 @@ from calendar_mark.models import CalendarMark
 #                     protected Set<String> tags;
 #             Unique Attributes:
 #                 private LocalDate dueDate;
+#                 private Boolean completion
 
 
 class GenericTask(CalendarMark):
     dueDate = models.DateTimeField()
+    status = models.BooleanField("Completion Status", default=False)
 
     class Meta:
         verbose_name = "Generic Task"
